@@ -3,7 +3,7 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'My API',
-    description: 'Contacts Project',
+    description: 'Cwag Project',
   },
  //test for localhost host: 'localhost:3000',
   host: 'localhost:3000',
