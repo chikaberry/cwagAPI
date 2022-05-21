@@ -23,7 +23,8 @@ const createCwag = async (req, res) => {
       stylePrice: req.body.stylePrice,
       styleDetails: req.body.styleDetails,
       quantiy: req.body.quantiy,
-    };
+    }; 
+    console.log(cwag);
 
     const response = await mongodb
       .getDb()
