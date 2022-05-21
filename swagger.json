@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "Contacts Project",
+    "description": "cwag Project",
     "version": "1.0.0"
   },
   "host": "localhost:3000",
