@@ -13,6 +13,7 @@ const getAll = async (req, res) => {
 };
 
 const createCwag = async (req, res) => {
+  console.log(req.body)
   try {
     const cwag = {
       styleName: req.body.styleName,
