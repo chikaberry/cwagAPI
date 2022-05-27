@@ -1,2 +1,24 @@
 POST http://localhost:3000/cwags
 
+###
+PUT  http://localhost:3000/cwags/628d220ad047ceb72a287d05 HTTP/1.1
+# # Content-Type: application/json
+
+# # {     
+
+#     "styleName": "Bold",
+#     "styleImages": "#",
+#     "styleDescription": "regular",
+#     "styleColor": "grey",
+#     "modelDescription": "muscular",
+#     "stylePrice": "$50",
+#     "styleDetails": "In demand",
+#     "quantiy": "20",
+# #     
+
+# #     }
+
+
+###
+
+DELETE http://localhost:3000/cwags/628d220ad047ceb72a287d05 HTTP/1.1

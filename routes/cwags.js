@@ -7,5 +7,9 @@ router.get('/', controller.getAll);
 router.post('/', controller.createCwag);
 
 
+router.put('/:id', controller.updateCwag);
+
+
+router.delete('/:id', controller.deleteCwag);
 
 module.exports = router

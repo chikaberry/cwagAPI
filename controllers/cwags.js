@@ -45,9 +45,23 @@ const createCwag = async (req, res) => {
 };
 
 
+const deleteCwag = async (req, res) => {
+  const cwagId = new ObjectId(req.params.id);
+  const response = await mongodb.getDb().db().collection('clothes').remove({ _id: cwagId }, true);
+  console.log(response);
+  if (response.deletedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while deleting the info.');
+  }
+};
+
+
 module.exports = {
 
     getAll,
-    createCwag
+    createCwag,
+    updateCwag,
+    deleteCwag
     
 }
