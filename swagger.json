@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "My API",
-    "description": "cwag Project",
+    "description": "Cwag Project",
     "version": "1.0.0"
   },
   "host": "cwagapi.herokuapp.com",
@@ -68,6 +68,79 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/cwags/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "styleName": {
+                  "example": "any"
+                },
+                "styleImages": {
+                  "example": "any"
+                },
+                "styleDescription": {
+                  "example": "any"
+                },
+                "styleColor": {
+                  "example": "any"
+                },
+                "modelDescription": {
+                  "example": "any"
+                },
+                "stylePrice": {
+                  "example": "any"
+                },
+                "styleDetails": {
+                  "example": "any"
+                },
+                "quantiy": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
           },
           "500": {
             "description": "Internal Server Error"
