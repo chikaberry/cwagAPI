@@ -44,6 +44,32 @@ const createCwag = async (req, res) => {
   }
 };
 
+const updateCwag = async (req, res) => {
+  const cwagId = new ObjectId(req.params.id);
+  // be aware of updateOne if you only want to update specific fields
+  const cwag = {
+      styleName: req.body.styleName,
+      styleImages: req.body.styleImages,
+      styleDescription: req.body.styleDescription,
+      styleColor: req.body.styleColor,
+      modelDescription: req.body.modelDescription,
+      stylePrice: req.body.stylePrice,
+      styleDetails: req.body.styleDetails,
+      quantiy: req.body.quantiy,
+  };
+  const response = await mongodb
+    .getDb()
+    .db()
+    .collection('clothes')
+    .replaceOne({ _id: userId }, cwag);
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while updating cwag.');
+  }
+};
+
 
 const deleteCwag = async (req, res) => {
   const cwagId = new ObjectId(req.params.id);
