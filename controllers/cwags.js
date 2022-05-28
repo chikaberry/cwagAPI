@@ -1,5 +1,5 @@
 const mongodb = require("../db/connect");
-
+const ObjectId = require("mongodb").ObjectId;
 const getAll = async (req, res) => {
   try {
     const data = await mongodb.getDb().db().collection("clothes").find();
@@ -13,7 +13,7 @@ const getAll = async (req, res) => {
 };
 
 const createCwag = async (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   try {
     const cwag = {
       styleName: req.body.styleName,
@@ -24,7 +24,7 @@ const createCwag = async (req, res) => {
       stylePrice: req.body.stylePrice,
       styleDetails: req.body.styleDetails,
       quantiy: req.body.quantiy,
-    }; 
+    };
     console.log(cwag);
 
     const response = await mongodb
@@ -45,9 +45,13 @@ const createCwag = async (req, res) => {
 };
 
 const updateCwag = async (req, res) => {
-  const cwagId = new ObjectId(req.params.id);
-  // be aware of updateOne if you only want to update specific fields
-  const cwag = {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json("Must pass a valid ID to update a cwag item.");
+  } else {
+    const cwagId = new ObjectId(req.params.id);
+
+    // be aware of updateOne if you only want to update specific fields
+    const cwag = {
       styleName: req.body.styleName,
       styleImages: req.body.styleImages,
       styleDescription: req.body.styleDescription,
@@ -56,38 +60,49 @@ const updateCwag = async (req, res) => {
       stylePrice: req.body.stylePrice,
       styleDetails: req.body.styleDetails,
       quantiy: req.body.quantiy,
-  };
-  const response = await mongodb
-    .getDb()
-    .db()
-    .collection('clothes')
-    .replaceOne({ _id: userId }, cwag);
-  console.log(response);
-  if (response.modifiedCount > 0) {
-    res.status(204).send();
-  } else {
-    res.status(500).json(response.error || 'Some error occurred while updating cwag.');
+    };
+
+    const response = await mongodb
+      .getDb()
+      .db()
+      .collection("clothes")
+      .replaceOne({ _id: cwagId }, cwag);
+    console.log(response);
+    if (response.modifiedCount > 0) {
+      res.status(204).send();
+    } else {
+      res
+        .status(500)
+        .json(response.error || "Some error occurred while updating cwag.");
+    }
   }
 };
 
-
 const deleteCwag = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must pass a valid ID to update a cwag item.');
+  }
+  else{
   const cwagId = new ObjectId(req.params.id);
-  const response = await mongodb.getDb().db().collection('clothes').remove({ _id: cwagId }, true);
+  const response = await mongodb
+    .getDb()
+    .db()
+    .collection("clothes")
+    .deleteOne({ _id: cwagId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
     res.status(204).send();
   } else {
-    res.status(500).json(response.error || 'Some error occurred while deleting the info.');
+    res
+      .status(500)
+      .json(response.error || "Some error occurred while deleting the info.");
   }
+}
 };
 
-
 module.exports = {
-
-    getAll,
-    createCwag,
-    updateCwag,
-    deleteCwag
-    
+  getAll,
+  createCwag,
+  updateCwag,
+  deleteCwag,
 };
