@@ -1,0 +1,23 @@
+{
+    "customer": {
+        " customerOrderStatus": "Completed",
+        "customerOrderQuantity": "2",
+        "customerAddress": "24 John doe street",
+        "customerEmail": "wono1223@yahoo.com",
+        "customerOrderDate": "15/12/2022"
+    },
+    "customer2": {
+        " customerOrderStatus": "Completed",
+        "customerOrderQuantity": "2",
+        "customerAddress": "24 John doe street",
+        "customerEmail": "wono1223@yahoo.com",
+        "customerOrderDate": "15/12/2022"
+    },
+    "contact4": {
+        " customerOrderStatus": "Completed",
+        "customerOrderQuantity": "2",
+        "customerAddress": "24 John doe street",
+        "customerEmail": "wono1223@yahoo.com",
+        "customerOrderDate": "15/12/2022"
+    }
+}

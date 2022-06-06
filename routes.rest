@@ -22,3 +22,15 @@ PUT  http://localhost:3000/cwags/628d220ad047ceb72a287d05 HTTP/1.1
 ###
 
 DELETE http://localhost:3000/cwags/628d220ad047ceb72a287d05 HTTP/1.1
+
+
+###
+
+POST http://localhost:3000/cwags.customer
+
+
+###
+PUT  http://localhost:3000/cwags.customer/629e630c17008e76cdab2ef9 HTTP/1.1
+
+###
+DELETE http://localhost:3000/cwags.customer/629e630c17008e76cdab2ef9 HTTP/1.1
