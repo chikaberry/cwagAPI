@@ -2,6 +2,7 @@ const router = require ('express').Router();
 const controller = require ('../controllers/cwags')
 const customer = require ('../controllers/customer')
 const validator = require ('../utils/middleware')
+const { requiresAuth } = require('express-openid-connect')
 
 router.get('/', controller.getAll);
 
@@ -17,13 +18,6 @@ router.delete('/:id', controller.deleteCwag);
 //customer
 
 
-router.get('/', customer.getAll);
-
-router.post('/', validator.cwagSecurity, customer.createCustomer);
-
-router.put('/:id', validator.cwagSecurity, customer.updateCustomer);
-
-router.delete('/:id', validator.cwagSecurity, customer.deleteCustomer);
 
 
 module.exports = router

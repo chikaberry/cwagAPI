@@ -6,11 +6,11 @@ const doc = {
     description: 'Cwag Project',
   },
  //test for localhost host: 'localhost:3000', 'cwagapi.herokuapp.com'
-  host: 'localhost:3000',
+  host: 'cwagapi.herokuapp.com',
   schemes: ['http', 'https'],
 };
 
-const outputFile = './swagger.json';
+const outputFile = './swagger-autogen.json';
 const endpointsFiles = ['./app.js'];
 
 /* NOTE: if you use the express Router, you must pass in the 

@@ -1,149 +1,315 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "title": "My API",
-    "description": "Cwag Project",
-    "version": "1.0.0"
-  },
-  "host": "localhost:3000",
-  "basePath": "/",
-  "schemes": [
-    "http",
-    "https"
-  ],
-  "paths": {
-    "/cwags/": {
-      "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "customerOrder": {
-                  "example": "any"
-                },
-                "customerOrderQuantity": {
-                  "example": "any"
-                },
-                "customerAddress": {
-                  "example": "any"
-                },
-                "customerEmail": {
-                  "example": "any"
-                },
-                "customerOrderDate": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "412": {
-            "description": "Precondition Failed"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/cwags/{id}": {
-      "put": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "customerOrder": {
-                  "example": "any"
-                },
-                "customerOrderQuantity": {
-                  "example": "any"
-                },
-                "customerAddress": {
-                  "example": "any"
-                },
-                "customerEmail": {
-                  "example": "any"
-                },
-                "customerOrderDate": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "412": {
-            "description": "Precondition Failed"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "delete": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "412": {
-            "description": "Precondition Failed"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    }
-  }
+	"swagger": "2.0",
+	"info": {
+		"title": "My API",
+		"description": "Cwag Project",
+		"version": "1.0.0"
+	},
+	"host": "cwagapi.herokuapp.com",
+	"basePath": "/",
+
+	"tags": [{
+			"name": "cwags",
+			"description": "Everything about the various design styles in the database"
+		},
+		{
+			"name": "customer",
+			"description": "Customers Orders"
+		}
+
+	],
+	"schemes": [
+		"http",
+		"https"
+	],
+	"paths": {
+		"/cwags/": {
+			"get": {
+				"tags": ["cwags"],
+				"summary": "",
+				"description": "",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK"
+					},
+					"500": {
+						"description": "Internal Server Error"
+					}
+				}
+			},
+			"post": {
+				"tags": ["cwags"],
+				"description": "",
+				"parameters": [{
+					"name": "body",
+					"in": "body",
+					"schema": {
+						"type": "object",
+						"properties": {
+							"styleName": {
+								"example": "any"
+							},
+							"styleImages": {
+								"example": "any"
+							},
+							"styleDescription": {
+								"example": "any"
+							},
+							"styleColor": {
+								"example": "any"
+							},
+							"modelDescription": {
+								"example": "any"
+							},
+							"stylePrice": {
+								"example": "any"
+							},
+							"styleDetails": {
+								"example": "any"
+							},
+							"quantiy": {
+								"example": "any"
+							}
+						}
+					}
+				}],
+				"responses": {
+					"201": {
+						"description": "Created"
+					},
+					"412": {
+						"description": "Precondition Failed"
+					},
+					"500": {
+						"description": "Internal Server Error"
+					}
+				}
+			}
+		},
+		"/cwags/{id}": {
+			"put": {
+				"tags": ["cwags"],
+				"description": "",
+				"parameters": [{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "body",
+						"in": "body",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"styleName": {
+									"example": "any"
+								},
+								"styleImages": {
+									"example": "any"
+								},
+								"styleDescription": {
+									"example": "any"
+								},
+								"styleColor": {
+									"example": "any"
+								},
+								"modelDescription": {
+									"example": "any"
+								},
+								"stylePrice": {
+									"example": "any"
+								},
+								"styleDetails": {
+									"example": "any"
+								},
+								"quantiy": {
+									"example": "any"
+								}
+							}
+						}
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "No Content"
+					},
+					"400": {
+						"description": "Bad Request"
+					},
+					"412": {
+						"description": "Precondition Failed"
+					},
+					"500": {
+						"description": "Internal Server Error"
+					}
+				}
+			},
+			"delete": {
+				"tags": ["cwags"],
+				"description": "",
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"type": "string"
+				}],
+
+				"responses": {
+					"204": {
+						"description": "No Content"
+					},
+					"400": {
+						"description": "Bad Request"
+					},
+					"500": {
+						"description": "Internal Server Error"
+					}
+				}
+			}
+		},
+
+		"/customer/": {
+
+			"get": {
+				"tags": ["customer"],
+				"summary": "get all orders on the database",
+				"description": "Get customers orders from the Database",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK"
+					},
+					"500": {
+						"description": "Internal Server Error"
+					}
+				}
+			},
+			"post": {
+				"tags": ["customer"],
+				"summary": "add and create orders with ID",
+				"description": "add to the current orders on the database",
+				"parameters": [{
+					"name": "body",
+					"in": "body",
+					"schema": {
+						"type": "object",
+						"properties": {
+							"customerOrder": {
+								"example": "any"
+							},
+							"customerOrderQuantity": {
+								"example": "any"
+							},
+							"customerAddress": {
+								"example": "any"
+							},
+							"customerEmail": {
+								"example": "any"
+							},
+							"customerOrderDate": {
+								"example": "any"
+							}
+						}
+					}
+				}],
+				"responses": {
+					"201": {
+						"description": "Created"
+					},
+					"412": {
+						"description": "Precondition Failed"
+					},
+					"500": {
+						"description": "Internal Server Error"
+					}
+				}
+			}
+		},
+		"/customer/{id}": {
+			"put": {
+				"tags": ["customer"],
+				"summary": "add,remove, update with ID",
+				"description": "Ad, remove, update orders with their ID",
+				"parameters": [{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "body",
+						"in": "body",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"customerOrder": {
+									"example": "any"
+								},
+								"customerOrderQuantity": {
+									"example": "any"
+								},
+								"customerAddress": {
+									"example": "any"
+								},
+								"customerEmail": {
+									"example": "any"
+								},
+								"customerOrderDate": {
+									"example": "any"
+								}
+							}
+						}
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "No Content"
+					},
+					"400": {
+						"description": "Bad Request"
+					},
+					"412": {
+						"description": "Precondition Failed"
+					},
+					"500": {
+						"description": "Internal Server Error"
+					}
+				}
+			},
+			"delete": {
+				"tags": ["customer"],
+				"summary": "delete with unique ID",
+				"description": "Delete with order ID",
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"type": "string"
+				}],
+				"responses": {
+					"204": {
+						"description": "No Content"
+					},
+					"400": {
+						"description": "Bad Request"
+					},
+					"412": {
+						"description": "Precondition Failed"
+					},
+					"500": {
+						"description": "Internal Server Error"
+					}
+				}
+			}
+
+		}
+	}
 }
