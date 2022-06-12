@@ -6,7 +6,7 @@ const doc = {
     description: 'Cwag Project',
   },
  //test for localhost host: 'localhost:3000', 'cwagapi.herokuapp.com'
-  host: 'https://cwagapi.herokuapp.com',
+  host: "cwagapi.herokuapp.com",
   schemes: ['http', 'https'],
 };
 

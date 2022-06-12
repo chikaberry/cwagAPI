@@ -8,11 +8,11 @@ const { requiresAuth } = require('express-openid-connect');
 
 router.get('/', customer.getAll);
 
-router.post('/', requiresAuth(),validation.customerSecurity, customer.createCustomer);
+router.post('/', validation.customerSecurity, customer.createCustomer);
 
-router.put('/:id', requiresAuth(),validation.customerSecurity, customer.updateCustomer);
+router.put('/:id', validation.customerSecurity, customer.updateCustomer);
 
-router.delete('/:id', requiresAuth(),validation.customerSecurity, customer.deleteCustomer);
+router.delete('/:id',  customer.deleteCustomer);
 
 
 module.exports = router

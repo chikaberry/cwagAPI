@@ -5,7 +5,7 @@
 		"description": "Cwag Project",
 		"version": "1.0.0"
 	},
-	"host": "https://cwagapi.herokuapp.com",
+	"host": "cwagapi.herokuapp.com'",
 	"basePath": "/",
 
 	"tags": [{
@@ -26,8 +26,8 @@
 		"/cwags/": {
 			"get": {
 				"tags": ["cwags"],
-				"summary": "",
-				"description": "",
+				"summary": "[GET DATA BY ID'S]",
+				"description": "Get all the latest inventory form the database",
 				"produces": [
 					"application/json"
 				],
@@ -43,7 +43,8 @@
 			},
 			"post": {
 				"tags": ["cwags"],
-				"description": "",
+				"summary": "Details about creating new collections with uniqe ID",
+				"description": "ADD to current collections by creating uniqe ID'S",
 				"parameters": [{
 					"name": "body",
 					"in": "body",
@@ -93,7 +94,8 @@
 		"/cwags/{id}": {
 			"put": {
 				"tags": ["cwags"],
-				"description": "",
+				"summary": "Modify the current collections by their ID",
+				"description": "ADD, DELETE, EDIT A current collection",
 				"parameters": [{
 						"name": "id",
 						"in": "path",
@@ -151,7 +153,8 @@
 			},
 			"delete": {
 				"tags": ["cwags"],
-				"description": "",
+				"summary": "Delete save collection from the database",
+				"description": "Delete a collection by their ID",
 				"parameters": [{
 					"name": "id",
 					"in": "path",

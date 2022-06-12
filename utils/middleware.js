@@ -31,7 +31,7 @@ const cwagSecurity = (req, res, next) => {
 
 const customerSecurity = (req, res, next) => {
     const validation = {
-        customerOrderStatus: "required|string",
+        //customerOrderStatus: "required|string",
         customerOrderQuantity: "required|integer",
         customerAddress: "required|string|min:3|max:300",
         customerEmail: "required|string",
