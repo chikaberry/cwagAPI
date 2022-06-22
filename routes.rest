@@ -26,7 +26,19 @@ DELETE http://localhost:3000/cwags/628d220ad047ceb72a287d05 HTTP/1.1
 
 ###
 
-POST http://localhost:3000/cwags
+POST http://localhost:3000/cwags HTTP/1.1
+content-type: application/json
+
+{
+  "styleName": "any",
+  "styleImages": "any",
+  "styleDescription": "any",
+  "styleColor": "any",
+  "modelDescription": "any",
+  "stylePrice": "any",
+  "styleDetails": "any",
+  "quantiy": "99"
+}
 
 
 ###

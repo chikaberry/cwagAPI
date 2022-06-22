@@ -6,13 +6,13 @@ const { requiresAuth } = require('express-openid-connect')
 
 router.get('/', controller.getAll);
 
-router.post('/', validator.cwagSecurity, controller.createCwag);
+router.post('/',  validator.cwagSecurity, controller.createCwag);
 
 
-router.put('/:id',validator.cwagSecurity, controller.updateCwag);
+router.put('/:id', validator.cwagSecurity, controller.updateCwag);
 
 
-router.delete('/:id', controller.deleteCwag);
+router.delete('/:id',  controller.deleteCwag);
 
 
 //customer
