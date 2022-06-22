@@ -19,7 +19,8 @@ const config = {
   secret: process.env.SECRET,
   baseURL: process.env.BASEURL,
   clientID: process.env.CLIENTID,
-  issuerBaseURL:process.env.ISSUERBASEURL
+  issuerBaseURL:"https://dev-9e9ir9qy.us.auth0.com"
+  //process.env.ISSUERBASEURL
   
 };
 
